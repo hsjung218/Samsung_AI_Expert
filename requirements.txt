@@ -1,0 +1,14 @@
+numpy
+matplotlib
+scipy
+pandas
+sympy
+seaborn
+scikit-learn
+torch
+torchinfo
+torchvision
+arff
+tqdm
+math
+tensorboardX

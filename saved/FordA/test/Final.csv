@@ -1,0 +1,4 @@
+epoch,time,ts_loss,ts_accu,model,tuning_version,dataname,vl_ratio,ts_ratio,shuffle,normalize,i_stt,i_end,X_length,y_length,y_offset,stride_length,criterion,metrics,optimizer,learning_rate,weight_decay,scheduler,epochs,on,patience,delta,verbose,momentum,idx,constant,T_0,T_mult,eta_max,T_up,gamma
+1,0.3317098617553711,0.2987585936983426,0.5197916666666667,CNN_a,CNN_a,FordA,0.2,0.2,False,True,0,,32,32,0,32,BCEE,Correctness,Adam,0.0001,0.0,,500,True,100,0,True,,,,,,,,
+1,0.3475313186645508,0.3021086578669607,0.7725409836065574,CNN_b,CNN_b,FordA,0.2,0.2,False,True,0,,16,16,0,16,BCEE,Correctness,SGD,0.0005,0.0,LambdaLR,500,True,100,0,True,0.9,0.0,0.9,,,,,
+1,0.358154296875,0.23869501628348086,0.9026639344262295,CNN_c,CNN_c,FordA,0.2,0.2,False,True,0,,16,16,0,16,BCEE,Correctness,SGD,0.0,0.05,SGDR_up,500,True,100,0,True,0.9,,,50.0,1.0,0.0005,3.0,0.2

@@ -1,0 +1,176 @@
+{
+    "n_gpu": 1,
+    "verbose": false,
+    "trainer": {
+        "epochs": 500
+    },
+    "early_stopping": {
+        "type": "EarlyStopping",
+        "args": {
+            "on": true,
+            "patience": 100,
+            "delta": 0,
+            "verbose": true
+        }
+    },
+    "data_loader": {
+        "type": "DataLoader",
+        "args": {
+            "dataname": "FordA",
+            "vl_ratio": 0.2,
+            "ts_ratio": 0.2,
+            "shuffle": false,
+            "normalize": true,
+            "i_stt": 0,
+            "i_end": null,
+            "X_length": 16,
+            "y_length": 16,
+            "y_offset": 0,
+            "stride_length": 16
+        }
+    },
+    "criterion": "BCEE",
+    "metrics":"Correctness",
+    "optimizer": "SGD",
+    "SGD": {
+        "learning_rate": 0,
+        "momentum": 0.9,
+        "weight_decay": 0.05
+    },
+    "scheduler": "SGDR_up",
+    "SGDR_up": {
+        "T_0": 50,
+        "T_mult": 1,
+        "eta_max": 5.0e-4,
+        "T_up": 3,
+        "gamma": 0.2
+    },
+    "model": "CNN_d",
+    "tuning_version": "CNN_d_2_c",
+    "CNN_d": {
+        "num_classes": 2,
+        "hidden_channels": 16,
+        "kernel_size": 7,
+        "mode1": 2,
+        "mode2": "c",
+        "command": ["D",32,"A","D"],
+        "dropout": 0.8
+    },
+    "CNN_c": {
+        "num_classes": 2,
+        "hidden_channels": 16,
+        "kernel_size": 7,
+        "command": ["D",32,"A","D"],
+        "dropout": 0.8
+    },
+    "CNN_b": {
+        "num_classes": 2,
+        "hidden_channels": 16,
+        "kernel_size": 3,
+        "command": [512,"A","D"],
+        "dropout": 0.5
+    },
+    "CNN_a": {
+            "num_classes": 2,
+            "command": [512,"A","D"],
+            "dropout": 0.5
+    },
+
+    "SGDR": {
+        "T_0": 100,
+        "T_mult": 2,
+        "eta_min": 1.0e-4
+    },
+    "LambdaLR": {
+        "idx": 0,
+        "constant": 0.90
+    },
+    "Adam": {
+        "learning_rate": 1.0e-4,
+        "weight_decay": 0.0
+    },
+    "RMSprop": {
+        "learning_rate": 1.0e-4,
+        "momentum":0.0,
+        "weight_decay": 0.0
+    },
+    "Adadelta": {
+        "learning_rate": 1.0e-3,
+        "weight_decay": 0.0
+    },
+    "Adagrad": {
+        "learning_rate": 1.0e-4,
+        "lr_decay":0,
+        "weight_decay": 0.0
+    },
+    "AdamW": {
+        "learning_rate": 1.0e-5,
+        "weight_decay": 0.0
+    },
+    "NAdam": {
+        "learning_rate": 2.0e-3,
+        "momentum_decay": 4.0e-3,
+        "weight_decay": 0.0
+    },
+    "RAdam": {
+        "learning_rate": 1.0e-4,
+        "weight_decay": 0.1
+    },
+    "StepLR": {
+        "step_size": 25,
+        "gamma": 1.0e-5
+    },
+
+
+    "DNN": {
+        "num_classes": 2,
+        "input_size": 500,
+        "command": [256,"A","D",32,"A"],
+        "dropout": 0.5
+    },
+    "CNN_ResNet": {
+        "num_classes": 2,
+        "blocks": [3,4,6,3],
+        "channels": [64,128,256,512],
+        "command": [],
+        "dropout": 0.5,
+        "zero_init_residual": false
+    },
+    "RNN": {
+        "num_classes": 2,
+        "input_size": 500,
+        "hidden_size": 16,
+        "num_layers": 2,
+        "command": ["A","D"],
+        "dropout": 0.5,
+        "bidirectional": false
+    },
+    "LSTM": {
+        "num_classes": 2,
+        "input_size": 500,
+        "hidden_size": 16,
+        "num_layers": 2,
+        "command": ["A","D"],
+        "dropout": 0.5,
+        "bidirectional": false
+    },
+    "GRU": {
+        "num_classes": 2,
+        "input_size": 500,
+        "hidden_size": 512,
+        "num_layers": 1,
+        "command": ["A",128,"A","D",32],
+        "dropout": 0.25,
+        "bidirectional": false
+    },
+    "Transformer": {
+        "num_classes": 2,
+        "dim_model": 500,
+        "num_heads": 10,
+        "dim_hidden": 512,
+        "num_layers": 2,
+        "command": [],
+        "dropout": 0.5
+    },
+    "": null
+}
